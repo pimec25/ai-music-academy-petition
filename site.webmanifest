@@ -1,0 +1,9 @@
+{
+  "name": "Future of AI Music",
+  "short_name": "Future of AI Music",
+  "description": "A creator-led petition for ethical recognition, transparent charts, and consent-based standards in AI music.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090815",
+  "theme_color": "#090815"
+}

@@ -1,39 +1,40 @@
-# AI Music Academy Petition
+# Future of AI Music Petition
 
-A public, creator-led petition to establish:
+A public, creator-led petition to establish an independent **AI Music Academy**, annual **AI Music Awards**, and a transparent **AI Music Charts Board**.
 
-- An independent **AI Music Academy**
-- Annual **AI Music Awards**
-- A transparent **AI Music Charts Board**
+## Custom domain: futureofaimusic.com
+
+This repository is configured for the apex domain `futureofaimusic.com` through the root `CNAME` file.
+
+### Connect the domain
+
+1. Register or confirm control of `futureofaimusic.com` with your domain registrar.
+2. In GitHub, open **pimec25/ai-music-academy-petition → Settings → Pages**.
+3. Under **Custom domain**, enter `futureofaimusic.com` and save.
+4. At the domain registrar, configure the apex domain using GitHub Pages DNS records. Use the specific record type your registrar supports:
+   - `A` records for `futureofaimusic.com` pointing to GitHub Pages IP addresses published in GitHub’s current documentation, or
+   - an `ALIAS` / `ANAME` record if your registrar supports it.
+5. Optional but recommended: add `www` as a `CNAME` pointing to `pimec25.github.io`, then redirect `www.futureofaimusic.com` to `futureofaimusic.com`.
+6. Return to GitHub Pages after DNS verifies and enable **Enforce HTTPS**.
+
+GitHub may take time to verify DNS and provision the certificate. Do not enable HTTPS until GitHub makes the option available.
 
 ## Live digital signatures
 
-The site is a static GitHub Pages-ready landing page connected to Supabase.
+The static site connects to Supabase for live signatures.
 
 - Petition records are stored in `public.petition_signatures`.
 - Email addresses and raw signature records are not publicly readable.
-- The browser may call only three purpose-built RPCs: submit a signature, retrieve a public total, and retrieve supporters who opted into public display.
-- The page uses the Supabase **publishable** key only. It contains no service-role credential.
-
-## Publish with GitHub Pages
-
-1. In the repository, open **Settings → Pages**.
-2. Select **Deploy from a branch**.
-3. Choose branch **main** and folder **/(root)**.
-4. Save. GitHub Pages will publish `index.html`.
-5. Optionally add a custom domain in the same Pages settings screen and enforce HTTPS after DNS verification.
+- The browser can only submit a signature, retrieve the public total, and retrieve supporters who opted into public display.
+- The site includes only a Supabase publishable key, never a service-role credential.
 
 ## Administration
 
-Use the Supabase dashboard’s Table Editor to view signatures privately. Export only the fields necessary for campaign operations. Do not publish email addresses.
+Use the Supabase Table Editor to privately review and export signatures only as needed for campaign operations. Do not publish email addresses. Moderate public names and messages routinely.
 
-## Important campaign practices
+## Before promotion
 
-- Keep the privacy statement accurate if your practices change.
-- Use a separate opt-in for outreach email, as this site does.
-- Moderate public names and messages periodically.
-- Consider adding CAPTCHA or an Edge Function with bot detection before a high-traffic campaign launch.
-
-## Schema source
-
-The original migration is stored at `supabase/migrations/001_create_petition_schema.sql` for reference. The active database also includes an access-hardening migration applied directly through Supabase.
+- Test a signature from desktop and mobile after the domain is connected.
+- Verify that the public supporter wall shows only opt-in supporters.
+- Add CAPTCHA or bot detection before a large paid or viral campaign.
+- Keep the privacy statement accurate if campaign practices change.
